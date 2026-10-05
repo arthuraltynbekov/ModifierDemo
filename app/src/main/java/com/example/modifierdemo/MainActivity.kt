@@ -2,6 +2,8 @@ package com.example.modifierdemo
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.text.font.FontWeight
 import android.os.Bundle
+import androidx.compose.foundation.border
+import androidx.compose.ui.graphics.Color
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -31,7 +33,9 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun DemoScreen(modifier: Modifier = Modifier) {
-    val modifier = Modifier.padding(all = 10.dp)
+    val modifier = Modifier
+        .padding(all = 10.dp)
+        .border(width = 2.dp, color = Color.Black)
 
     Text(
         "Hello Compose",
