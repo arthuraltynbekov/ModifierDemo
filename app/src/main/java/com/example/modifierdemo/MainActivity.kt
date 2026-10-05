@@ -3,6 +3,8 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.text.font.FontWeight
 import android.os.Bundle
+import androidx.compose.ui.Alignment
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.layout.width
 import androidx.compose.ui.draw.clip
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -43,20 +45,28 @@ fun DemoScreen(modifier: Modifier = Modifier) {
         .border(width = 2.dp, color = Color.Black)
         .padding(all = 10.dp)
 
-    Text(
-        "Hello Compose",
-        mymodifier,
-        fontSize = 40.sp,
-        fontWeight = FontWeight.Bold
-    )
+    Column(
+        Modifier.padding(20.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+        Text(
+            "Hello Compose",
+            mymodifier,
+            fontSize = 40.sp,
+            fontWeight = FontWeight.Bold
+        )
 
-    CustomImage(
-        R.drawable.vacation,
-        Modifier
-            .padding(16.dp)
-            .width(270.dp)
-            .clip(shape = RoundedCornerShape(30.dp))
-    )
+        Spacer(Modifier.height(16.dp))
+
+        CustomImage(
+            R.drawable.vacation,
+            Modifier
+                .padding(16.dp)
+                .width(270.dp)
+                .clip(shape = RoundedCornerShape(30.dp))
+        )
+    }
 }
 
 
