@@ -1,7 +1,11 @@
 package com.example.modifierdemo
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.text.font.FontWeight
 import android.os.Bundle
+import androidx.compose.foundation.layout.width
+import androidx.compose.ui.draw.clip
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.Image
 import androidx.compose.ui.res.painterResource
 import androidx.compose.foundation.border
@@ -35,17 +39,26 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun DemoScreen(modifier: Modifier = Modifier) {
-    val modifier = Modifier
+    val mymodifier = modifier
         .border(width = 2.dp, color = Color.Black)
         .padding(all = 10.dp)
 
     Text(
         "Hello Compose",
-        modifier,
+        mymodifier,
         fontSize = 40.sp,
         fontWeight = FontWeight.Bold
     )
+
+    CustomImage(
+        R.drawable.vacation,
+        Modifier
+            .padding(16.dp)
+            .width(270.dp)
+            .clip(shape = RoundedCornerShape(30.dp))
+    )
 }
+
 
 @Composable
 fun CustomImage(image: Int, modifier: Modifier = Modifier) {
